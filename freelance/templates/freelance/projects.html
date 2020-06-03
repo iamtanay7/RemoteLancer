@@ -1,0 +1,32 @@
+{% extends 'freelance/base.html' %}
+{% block title %}
+Jobs
+{%endblock%}
+
+{% block body %}
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Project title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Description</th>
+      <th scope="col">Category</th>
+      <th scope="col">Action</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+{% for project in all_projects %}
+    <tr>
+      <td>{{project.title}}</td>
+      <td>{{project.author}}</td>
+      <td>{{project.project_desc}}</td>
+      <td>{{project.domain}}</td>
+      <td><button class="btn btn-warning"  onClick="location.href='{%url 'freelance:project_bid' project.id %}'" >Bid now</button></td>
+    </tr>
+{%endfor%}
+  </tbody>
+</table>
+{%endblock%}

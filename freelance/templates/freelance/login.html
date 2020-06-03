@@ -1,0 +1,18 @@
+{% extends 'freelance/base.html' %}
+{% block title %}
+Login
+{%endblock%}
+
+
+{% block body %}
+<br><br><br>
+<div class="container div1">
+    <center><h2>Login Form</h2></center><br>
+<form action="#" method="post">
+{% csrf_token %}
+{{form.username}}<br>
+{{form.password}}<br>
+<input type="submit" value="Submit" class="form-submit btn btn-primary">
+</form>
+</div>
+{%endblock%}

@@ -1,0 +1,14 @@
+{% extends 'freelance/base.html' %}
+{% block title %}
+Post Project
+{%endblock%}
+
+
+{% block body %}
+<form action="#" method="post" class="form-control">
+    {% csrf_token %}
+{{ form }}
+<input type="submit" value="Submit">
+</form>
+
+{%endblock%}

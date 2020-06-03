@@ -1,0 +1,86 @@
+{% extends 'freelance/base.html' %}
+{% load static %}
+{% block title %}
+RemoteLancer
+{%endblock%}
+
+
+
+
+
+
+{%block login%}
+{% if request.user.is_authenticated %}
+<li class="nav-item">
+<form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search jobs and projects" aria-label="Search">
+    <button class="btn btn-success my-2 my-sm-0" type="submit" style="margin-right: 5px">Search</button>
+</form>
+</li>
+
+<li class="nav-item">
+<button class="btn btn-dark" onclick="location.href='{% url 'freelance:post_project' %}'" 
+style="margin-right: 5px">
+Post a proj
+</button>	
+</li>
+<li class="nav-item">
+<button class="btn btn-dark" onclick="location.href='{% url 'freelance:post_job' %}'" 
+style="margin-right: 5px">
+Post a job</button>	
+</li>
+<li class="nav-item">
+<button class="btn btn-dark" onclick="location.href='{% url 'freelance:projects' %}'" 
+style="margin-right: 5px">
+Browse Projects</button>	
+</li>
+<li class="nav-item">
+<button class="btn btn-dark" onclick="location.href='{% url 'freelance:jobs' %}'" 
+style="margin-right: 5px">
+Browse Jobs</button>	
+</li>
+<li class="nav-item  navbar-text" style="margin-right: 5px">
+@{{request.user.username}}
+</li>
+<li class="nav-item">
+<button class="btn btn-dark" onclick="location.href='{% url 'freelance:logout' %}'">
+Logout</button>	
+</li>
+
+
+
+{% else %}
+<li class="nav-item">
+	<button class="btn btn-dark" onclick="location.href='{% url 'freelance:login' %}'">
+	Login</button>
+</li>
+<li class="nav-item">
+	<button type="button" class="btn btn-dark"
+        onclick="location.href='{% url 'freelance:register' %}'">Register</button>
+</li>
+
+
+{% endif %}
+{%endblock%}
+
+{% block body %}
+<div class="jumbotron jumbotron-fluid bg-dark">
+  <div class="container">
+    <h1 class="display-4">Welcome to RemoteLancer.com</h1><hr style="background-color:white">
+    <p class="lead">
+		Work from home during the COVID-19 pandemic. Find jobs, hire people, work on a project. Whatever your needs,
+		we got you covered.<br>
+		
+		<button type="button" class="btn btn-primary" style="margin-top:10px"
+        onclick="location.href='{% url 'freelance:register' %}'">Get Started</button>
+		
+	</p>
+  </div>
+</div>
+
+
+<center>
+<img src = "{% static 'freelance/images/freelancer.png' %}" width="100%" >
+</img>
+</center>
+{% endblock body %}

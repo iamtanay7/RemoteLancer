@@ -1,0 +1,15 @@
+{% extends 'freelance/base.html' %}
+{% block title %}
+Post Job
+{%endblock%}
+
+
+{% block body %}
+<form method="post" action="">
+    {% csrf_token %}
+    {{ errormsg }}
+    {{form}}
+    <input type="submit" value="Submit">
+</form>
+
+{%endblock%}

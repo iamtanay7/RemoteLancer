@@ -1,0 +1,50 @@
+{% extends 'freelance/base.html' %}
+{% block title %}
+Project bid
+{%endblock%}
+
+{% block body %}
+<br><br><br>
+	<div class="container form-div" >
+    <center>
+      <h2>Project Details</h2>
+    </center>
+		<dl class="row">
+			<dt class="col-sm-3">Project Title</dt>
+  			<dd class="col-sm-9">{{object.title}}</dd>
+
+  			<dt class="col-sm-3">Posted by</dt>
+  			<dd class="col-sm-9">{{object.author}}</dd>
+
+			<dt class="col-sm-3">Project Desciption</dt>
+  			<dd class="col-sm-9">{{object.project_desc}}</dd>
+
+  			<dt class="col-sm-3">Domain</dt>
+  			<dd class="col-sm-9">{{object.domain}}</dd>
+
+
+        <dt class="col-sm-3">Application letter</dt>
+        <dd class="col-sm-9">
+          <textarea class="form-control"></textarea>
+        </dd>
+
+
+
+  			<dt class="col-sm-3">
+  				<input type="number" name="hourly-rate" placeholder="Enter hourly rate" class="form-control">
+  			</dt>
+
+  			<dd class="col-sm-9">
+  				<button class="btn btn-dark">Apply now</button>
+  			</dd>
+
+
+
+		</dl>
+
+	</div>
+
+
+
+
+{%endblock%}
